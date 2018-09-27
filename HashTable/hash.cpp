@@ -95,6 +95,7 @@ int hashTable::findPos(const std::string &key) {
 
 bool hashTable::rehash() {
   int newPrime = getPrime(2*capacity);
+  std::cout << "rehashing"  << "\n";
   //copy old vector to newData and resize old vector to be larger
   std::vector<hashItem> newData = data;
   try {
@@ -109,7 +110,7 @@ bool hashTable::rehash() {
     data[i].isOccupied = false;
     data[i].isDeleted = false;
   }
-  //insert data back to old (resized) vector
+  //insert data back to old (rehashed) vector
   for (int i = 0; i < newData.size(); i++) {
     if (newData[i].isOccupied == true && newData[i].isDeleted == false) {
         insert(newData[i].key, newData[i].pv);
