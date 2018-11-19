@@ -32,10 +32,6 @@ int main() {
   std::cout << "Enter name of output file: ";
   std::cin >> outPath;
   std::ofstream outFile (outPath.c_str());
-  if(!outFile) {
-    std::cout << "Error: could not open " << outPath << "\n";
-  }
-
   gph.returnGraph(outFile);
   outFile.close();
   return 0;

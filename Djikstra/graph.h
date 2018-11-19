@@ -45,7 +45,6 @@ class graph {
       public:
         std::string name;  // name of vertix
         std::list<edge> adj;  // list full of edges from node
-        // for djikstra
         bool known; // if node has been found
         int dist; // distance
         std::list<std::string> path;
